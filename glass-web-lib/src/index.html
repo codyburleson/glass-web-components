@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/glass.esm.js"></script>
+    <script nomodule src="/build/glass.js"></script>
+
+    <script>
+
+        const menuData = [
+            {
+                "_id": "1966-yearbook",
+                "title": "1966 Yearbook - Marine Corps Recruit Depot, San Diego, CA",
+                "description": "Vietnam War era yearbook from the Marine Corps Recruit Depot in San Diego, CA. Source donated by Ken Hicks (1st Battalion, 3rd Marines). Large PDF file: 32.8 MB (give it time).",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/cage/1966-yearbook-marine-corps-recruit-depot-san-diego-ca_thumb.jpg",
+                "src": "https://s3.us-east-2.amazonaws.com/codyburleson.com/files/1966-Yearbook_MarineCorpsRecruitDepot_San-Diego-CA.pdf"
+            },
+            {
+                "_id":"1967-cruise-book",
+                "title": "USS Okinawa (LPH-3) 1967 Cruise Book",
+                "description": "Vietnam War era photo cruise book. Source donated by Bruce Axelrod (1st Battalion, 3rd Marines). Large PDF file: 40.2 MB (give it time).",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/cage/uss-okinawa-1967-yearbook_thumb.jpg",
+                "src": "https://s3.us-east-2.amazonaws.com/codyburleson.com/files/uss-okinawa-1967_yearbook.pdf"
+            },
+            {
+                "_id": "ia-files-003-definitions-defined",
+                "title": "The IA Files 3 - Definitions, Defined",
+                "description": "Understanding the information architecture of word definitions.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/webpage-icon.png",
+                "created": "2013-02-22T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "menus": ["blog"],
+                "path": ["blog"]
+            },
+            {
+                "_id": "create-custom-properties-for-a-resource-environment-provider-using-wasadmin-scripting",
+                "title": "How to Create Custom Properties for a Resource Environment Provider Using wasadmin Scripting",
+                "description": "An example wasadmin script (in Jython) that demonstrates how to create and/or update custom properties for resource environment providers.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-websphere.png",
+                "created": "2013-02-17T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "menus": ["blog"],
+                "path": ["blog"]
+            },
+            {
+                "_id": "base22-consultants-creed",
+                "title": "The Base22 Consultant's Creed",
+                "description": "A 'just for fun' pep talk I wrote for new recruits at Base22.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/2018/07/Base22CreedFlag-thumbnail.png",
+                "created": "2013-01-23T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "menus": ["blog"],
+                "path": ["blog"]
+            },
+            {
+                "_id": "remove-sign-up-link-on-wps-login-page",
+                "title": "How to Remove the Sign-Up Link on the WebSphere Portal Login Page",
+                "description": "When sign-up capability is not desired, here’s how to remove the sign-up link from the login portlet.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-websphere.png",
+                "created": "2010-06-14T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "menus": ["blog"],
+                "path": ["blog"]
+            },
+            {
+                "_id": "render-the-keys-and-values-from-a-map-in-freemarker",
+                "title": "Render the Keys and Values From a Map in Freemarker",
+                "description": "How to get the keys and values of a Map (such as a HashMap) from within a Freemarker template.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-java.svg",
+                "created": "2009-12-24T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "menus": ["blog"],
+                "path": ["blog"],
+                "subtitle": ""
+            },
+            {
+                "_id": "are-mashups-the-new-portals-and-gadgets-the-new-portlets",
+                "title": "Are Mashups the New Portals and Gadgets the New Portlets?",
+                "description": "What it means to be a portal and a portlet may be changing. Here's why.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/webpage-icon.png",
+                "created": "2009-06-12T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "menus": ["blog"],
+                "path": ["blog"]
+            },
+            {
+                "_id": "list-ibm-db2-commands",
+                "title": "List IBM DB2 Commands",
+                "description": "Get a quick list of IBM DB2 commands.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-ibm.svg",
+                "created": "2009-03-29T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "path": ["blog"],
+                "subtitle": ""
+            },
+            {
+                "_id": "java-system-properties",
+                "title": "Java System Properties",
+                "description": "A list of the system properties that can be accessed in Java code with System.getProperty",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-java.svg",
+                "created": "2008-10-29T00:00:00.000Z",
+                "modified": "2021-06-01T04:49:56.500Z",
+                "topics": ["software-dev"],
+                "path": ["blog"],
+                "subtitle": ""
+            },
+            {
+                "_id": "change-canvas-background-color-in-zbrush",
+                "title": "How to Change Canvas Background Color in ZBrush",
+                "description": "Here's how to change the canvas background color in ZBrush.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-zbrush.svg",
+                "created": "2018-10-07T00:00:00.000Z",
+                "modified":"2021-05-07T15:52:06.173Z",
+                "topics": ["zbrush"],
+                "path": ["blog"]
+            },
+            {
+                "_id": "fix-for-git-after-macos-mojave-upgrade",
+                "title": "Fix for Git After Mac OS Mojave Upgrade",
+                "description": "How to fix Git when getting an xcrun error after  Mac OS Mojave upgrade.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-apple.svg",
+                "created": "2018-10-02T00:00:00.000Z",
+                "modified": "2021-05-31T10:52:02.367Z",
+                "topics": ["software-dev"],
+                "subtitle": "",
+                "path": ["blog"]
+            },
+            {
+                "_id": "pwa-with-ionic-angular-wordpress-api-5",
+                "title": "Build a PWA With Ionic, Angular, and the WordPress REST API - Part 5",
+                "description": "Build a progressive web app that delivers WordPress content using Ionic, Angular, and the WordPress API.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-wordpress.svg",
+                "created": "2018-09-20T00:00:00.000Z",
+                "modified": "2021-05-31T11:47:23.038Z",
+                "topics": ["software-dev"],
+                "subtitle": "",
+                "path": ["blog"]
+            },
+            {
+                "_id": "setup-carbon-ldp-with-stardog-container-from-scratch",
+                "title": "Setup Carbon Ldp With Stardog Container From Scratch",
+                "description": "A procedure for setting up Carbon LDP with Stardog as the database.",
+                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/carbonldp-logo.png",
+                "created": "2018-07-17T00:00:00.000Z",
+                "topics": ["software-dev"],
+                "path": ["blog"]
+            }
+        ]
+    </script>
+
+    <style>
+        /* ****************************************************/
+        /* DEFINE VAR VALUES IN PSEUDO ROOT ELEMENT...        */
+        :root {
+            --thumbnailWidth: 100px;
+        }
+        /* ****************************************************/
+
+        body {
+              /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
+        }
+        h2 {
+            background-color: #000;
+            color: #fff;
+            padding: 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Glass Web Components</h1>
+
+    <p>A set of W3C standard web components. They can be used in any web project, but they're designed first and foremost to be used with the Rock Mountain platform.</p>
+
+    <h2>My Component</h2>
+
+    <p>Tag: <code>&lt;my-component /&gt;</code></p>
+
+    <p>This is just a component that was created by default when the Stencil project was initialized. We're leaving it in the project for the time being, just in case there is something we can still learn from it. The &quot;Hello World...&quot; message below is the output of the component.</p>
+    
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+
+    <h2>Twisty</h2>
+
+    <p>Tag: <code>&lt;glass-twisty /&gt;</code></p>
+
+    <glass-twisty>
+        <p>Here are the inner contents of the twisty, level 1.</p>
+        <glass-twisty><p>Here are the inner contents of the twisty, level 2.</p></glass-twisty>
+    </glass-twisty>
+
+    <h2>Menu</h2>
+
+    <p>Tag: <code>&lt;glass-menu /&gt;</code></p>
+
+    <glass-menu id="menu1" ruled="false" data-array='[]' default-thumbnail-src="https://s3.us-east-2.amazonaws.com/codyburleson.com/images/thumbnail-writing-hand.svg"></glass-menu>
+
+    <script>
+            (function () {
+
+                // console.log('>> index.html')
+
+                // One way of setting the data for the menu component...
+                let elm = document.getElementById('menu1')
+                elm.setAttribute('data-array', JSON.stringify(menuData))
+
+                // Here, we demonstrate one way of listening for a menuItemClicked event that 
+                // each item in the menu generates when clicked...
+                menus = document.getElementsByTagName("glass-menu");
+                for(var i = 0; i < menus.length; i++) {
+
+                    menus[i].addEventListener('menuItemClicked', event => { 
+                        /* your listener */ 
+                        console.log('event: %o', event.detail)
+                        alert('Got menuItemClicked event; check console for item details.')
+                    })
+
+                }
+
+            }());
+    </script>
+
+</body>
+
+</html>

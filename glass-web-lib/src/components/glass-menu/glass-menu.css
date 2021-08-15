@@ -1,0 +1,79 @@
+/*
+REFERENCES
+A Complete Guide to Flexbox
+See: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Example use of var within this stylesheet...
+min-width: var(--thumbnailWidth);
+*/
+:host {
+  clear:both;
+  display: block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+/* resets... */
+a, h2, p {
+    margin:0
+}
+a {
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+/*
+a:hover h2 {
+    text-decoration:underline;
+    color: var(--linkColor);
+}
+*/
+h2 {
+    font-size:18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+p {
+    color:#666;
+}
+ul {
+    list-style-type: none; /* Remove bullets */
+}
+li {
+    clear:both;  
+    padding: 0;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+li.ruled {
+    border-bottom: 1px solid #ccc;
+}
+li:last-of-type {
+    border-bottom: none;
+}
+.description {
+    padding-bottom:6px;
+}
+.imageContainer {
+    flex: 1 auto;
+    max-width: 100px; /* default if --thumnailWidth not defined */
+    max-width: var(--thumbnailWidth);
+    order: 1;
+}
+.itemContainer {
+    /* border:1px solid blue; */
+    display: flex;
+    align-items: flex-start; /* all items aligned top, but can grow downward when pushed open by contents */
+}
+.textContainer {
+    margin-left:20px;
+    flex: 1 auto;
+    flex-grow: 1;
+    order: 2;
+}
+.thumbnail {
+    min-width: 100px; /* default if --thumnailWidth not defined */
+    min-width: var(--thumbnailWidth);
+    max-width: 100%;
+}
