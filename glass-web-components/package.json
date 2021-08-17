@@ -1,6 +1,6 @@
 {
-  "name": "glass",
-  "version": "0.0.2",
+  "name": "glass-web-components",
+  "version": "0.0.10",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
