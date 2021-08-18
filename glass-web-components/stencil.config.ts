@@ -2,11 +2,11 @@ import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
-  namespace: 'glass',
+  namespace: 'glass-web-components',
   outputTargets: [
     reactOutputTarget({
-        componentCorePackage: 'glass',
-        proxiesFile: '../glass-react/src/components.ts',
+        componentCorePackage: 'glass-web-components',
+        proxiesFile: '../glass-react-components/src/components.ts',
         includeDefineCustomElements: true,
     }),
     {
