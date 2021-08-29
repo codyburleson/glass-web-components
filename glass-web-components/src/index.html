@@ -55,99 +55,6 @@
                 "topics": ["software-dev"],
                 "menus": ["blog"],
                 "path": ["blog"]
-            },
-            {
-                "_id": "remove-sign-up-link-on-wps-login-page",
-                "title": "How to Remove the Sign-Up Link on the WebSphere Portal Login Page",
-                "description": "When sign-up capability is not desired, here’s how to remove the sign-up link from the login portlet.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-websphere.png",
-                "created": "2010-06-14T00:00:00.000Z",
-                "topics": ["software-dev"],
-                "menus": ["blog"],
-                "path": ["blog"]
-            },
-            {
-                "_id": "render-the-keys-and-values-from-a-map-in-freemarker",
-                "title": "Render the Keys and Values From a Map in Freemarker",
-                "description": "How to get the keys and values of a Map (such as a HashMap) from within a Freemarker template.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-java.svg",
-                "created": "2009-12-24T00:00:00.000Z",
-                "topics": ["software-dev"],
-                "menus": ["blog"],
-                "path": ["blog"],
-                "subtitle": ""
-            },
-            {
-                "_id": "are-mashups-the-new-portals-and-gadgets-the-new-portlets",
-                "title": "Are Mashups the New Portals and Gadgets the New Portlets?",
-                "description": "What it means to be a portal and a portlet may be changing. Here's why.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/webpage-icon.png",
-                "created": "2009-06-12T00:00:00.000Z",
-                "topics": ["software-dev"],
-                "menus": ["blog"],
-                "path": ["blog"]
-            },
-            {
-                "_id": "list-ibm-db2-commands",
-                "title": "List IBM DB2 Commands",
-                "description": "Get a quick list of IBM DB2 commands.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-ibm.svg",
-                "created": "2009-03-29T00:00:00.000Z",
-                "topics": ["software-dev"],
-                "path": ["blog"],
-                "subtitle": ""
-            },
-            {
-                "_id": "java-system-properties",
-                "title": "Java System Properties",
-                "description": "A list of the system properties that can be accessed in Java code with System.getProperty",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-java.svg",
-                "created": "2008-10-29T00:00:00.000Z",
-                "modified": "2021-06-01T04:49:56.500Z",
-                "topics": ["software-dev"],
-                "path": ["blog"],
-                "subtitle": ""
-            },
-            {
-                "_id": "change-canvas-background-color-in-zbrush",
-                "title": "How to Change Canvas Background Color in ZBrush",
-                "description": "Here's how to change the canvas background color in ZBrush.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-zbrush.svg",
-                "created": "2018-10-07T00:00:00.000Z",
-                "modified":"2021-05-07T15:52:06.173Z",
-                "topics": ["zbrush"],
-                "path": ["blog"]
-            },
-            {
-                "_id": "fix-for-git-after-macos-mojave-upgrade",
-                "title": "Fix for Git After Mac OS Mojave Upgrade",
-                "description": "How to fix Git when getting an xcrun error after  Mac OS Mojave upgrade.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-apple.svg",
-                "created": "2018-10-02T00:00:00.000Z",
-                "modified": "2021-05-31T10:52:02.367Z",
-                "topics": ["software-dev"],
-                "subtitle": "",
-                "path": ["blog"]
-            },
-            {
-                "_id": "pwa-with-ionic-angular-wordpress-api-5",
-                "title": "Build a PWA With Ionic, Angular, and the WordPress REST API - Part 5",
-                "description": "Build a progressive web app that delivers WordPress content using Ionic, Angular, and the WordPress API.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/logo-wordpress.svg",
-                "created": "2018-09-20T00:00:00.000Z",
-                "modified": "2021-05-31T11:47:23.038Z",
-                "topics": ["software-dev"],
-                "subtitle": "",
-                "path": ["blog"]
-            },
-            {
-                "_id": "setup-carbon-ldp-with-stardog-container-from-scratch",
-                "title": "Setup Carbon Ldp With Stardog Container From Scratch",
-                "description": "A procedure for setting up Carbon LDP with Stardog as the database.",
-                "thumbnail": "https://s3.us-east-2.amazonaws.com/codyburleson.com/images/carbonldp-logo.png",
-                "created": "2018-07-17T00:00:00.000Z",
-                "topics": ["software-dev"],
-                "path": ["blog"]
             }
         ]
     </script>
@@ -177,18 +84,16 @@
     <h1>Glass Web Components</h1>
 
     <p>A set of W3C standard web components. They can be used in any web project, but they're designed first and foremost to be used with the Rock Mountain platform.</p>
-
-    <h2>My Component</h2>
-
-    <p>Tag: <code>&lt;my-component /&gt;</code></p>
-
-    <p>This is just a component that was created by default when the Stencil project was initialized. We're leaving it in the project for the time being, just in case there is something we can still learn from it. The &quot;Hello World...&quot; message below is the output of the component.</p>
     
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <h2>Subscribe</h2>
+
+    <p>Tag: <code>&lt;glass-subscribe&gt;&lt;/glass-subscribe&gt;</code></p>
+
+    <glass-subscribe action="http://localhost:3000/api/subscribe"></glass-subscribe>
 
     <h2>Twisty</h2>
 
-    <p>Tag: <code>&lt;glass-twisty /&gt;</code></p>
+    <p>Tag: <code>&lt;glass-twisty&gt;&lt;/glass-twisty&gt;</code></p>
 
     <glass-twisty>
         <p>Here are the inner contents of the twisty, level 1.</p>
@@ -197,9 +102,17 @@
 
     <h2>Menu</h2>
 
-    <p>Tag: <code>&lt;glass-menu /&gt;</code></p>
+    <p>Tag: <code>&lt;glass-menu&gt;&lt;/glass-menu&gt;</code></p>
 
     <glass-menu id="menu1" ruled="false" data-array='[]' default-thumbnail-src="https://s3.us-east-2.amazonaws.com/codyburleson.com/images/thumbnail-writing-hand.svg"></glass-menu>
+
+    <h2>My Component</h2>
+
+    <p>Tag: <code>&lt;my-component&gt;&lt;/my-component&gt;</code></p>
+
+    <p>This is just a component that was created by default when the Stencil project was initialized. We're leaving it in the project for the time being, just in case there is something we can still learn from it. The &quot;Hello World...&quot; message below is the output of the component.</p>
+    
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
 
     <script>
             (function () {

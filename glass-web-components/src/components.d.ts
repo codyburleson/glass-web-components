@@ -15,6 +15,9 @@ export namespace Components {
         "defaultThumbnailSrc": string;
         "ruled": boolean;
     }
+    interface GlassSubscribe {
+        "action": string;
+    }
     interface GlassTwisty {
         /**
           * Close (collapse) the twisty.
@@ -73,6 +76,12 @@ declare global {
         prototype: HTMLGlassMenuElement;
         new (): HTMLGlassMenuElement;
     };
+    interface HTMLGlassSubscribeElement extends Components.GlassSubscribe, HTMLStencilElement {
+    }
+    var HTMLGlassSubscribeElement: {
+        prototype: HTMLGlassSubscribeElement;
+        new (): HTMLGlassSubscribeElement;
+    };
     interface HTMLGlassTwistyElement extends Components.GlassTwisty, HTMLStencilElement {
     }
     var HTMLGlassTwistyElement: {
@@ -88,6 +97,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "glass-img": HTMLGlassImgElement;
         "glass-menu": HTMLGlassMenuElement;
+        "glass-subscribe": HTMLGlassSubscribeElement;
         "glass-twisty": HTMLGlassTwistyElement;
         "my-component": HTMLMyComponentElement;
     }
@@ -102,6 +112,9 @@ declare namespace LocalJSX {
         "defaultThumbnailSrc"?: string;
         "onMenuItemClicked"?: (event: CustomEvent<any>) => void;
         "ruled"?: boolean;
+    }
+    interface GlassSubscribe {
+        "action"?: string;
     }
     interface GlassTwisty {
         /**
@@ -138,6 +151,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "glass-img": GlassImg;
         "glass-menu": GlassMenu;
+        "glass-subscribe": GlassSubscribe;
         "glass-twisty": GlassTwisty;
         "my-component": MyComponent;
     }
@@ -148,6 +162,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "glass-img": LocalJSX.GlassImg & JSXBase.HTMLAttributes<HTMLGlassImgElement>;
             "glass-menu": LocalJSX.GlassMenu & JSXBase.HTMLAttributes<HTMLGlassMenuElement>;
+            "glass-subscribe": LocalJSX.GlassSubscribe & JSXBase.HTMLAttributes<HTMLGlassSubscribeElement>;
             "glass-twisty": LocalJSX.GlassTwisty & JSXBase.HTMLAttributes<HTMLGlassTwistyElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
