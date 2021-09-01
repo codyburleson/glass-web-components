@@ -4,7 +4,7 @@ import { Component, Prop, State, h } from '@stencil/core';
 @Component({
     tag: 'glass-subscribe',
     // styleUrl: 'glass-subscribe.css',
-    shadow: true,
+    shadow: false,
 })
 export class GlassSubscribe {
 
@@ -71,8 +71,14 @@ export class GlassSubscribe {
 
     render() {
         return (
-            <div>
-                <p>Subscribe</p>
+
+        <div class="card">
+            <div class="card-header">
+                Subscribe
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Get project news and announcements by email</h5>
+                <p class="card-text">Signup for updates; don't worry, I will never share your information.</p>
                 <form id="subscribeForm" onSubmit={(e) => this.handleSubmit(e)}>
                     <div class="mb-3">
                         <label htmlFor="fName" class="form-label">First Name</label>
@@ -85,6 +91,7 @@ export class GlassSubscribe {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+        </div>
         );
     }
 }

@@ -1,4 +1,4 @@
-# gls-twisty
+# glass-twisty
 
 Creates a collapsible section of content that can be toggled open and closed (expanded/collapsed) with a click / tap, 
 or programmatically.
@@ -11,12 +11,14 @@ now unless I run into some reason that reveals it to be a dumb idea).
 
 ## Properties
 
-| Property | Attribute | Description                                                                                                   | Type      | Default     |
-| -------- | --------- | ------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `href`   | `href`    | Allows the twisty header text to be a hyperlink                                                               | `string`  | `"#"`       |
-| `label`  | `label`   | Label for the twisty header; defaults to `"More..."`                                                          | `string`  | `'More...'` |
-| `opened` | `opened`  | When `true`, the twisty state will be opened by default.                                                      | `boolean` | `undefined` |
-| `target` | `target`  | The target of the link when the href attribute is used. One of _blank, _self, _top, _parent; default is _self | `string`  | `"_self"`   |
+| Property     | Attribute     | Description                                                                                                   | Type      | Default     |
+| ------------ | ------------- | ------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `href`       | `href`        | Allows the twisty header text to be a hyperlink                                                               | `string`  | `"#"`       |
+| `label`      | `label`       | Label for the twisty header; defaults to `"More..."`                                                          | `string`  | `'More...'` |
+| `labelColor` | `label-color` | Color to for the twisty header text                                                                           | `string`  | `undefined` |
+| `opened`     | `opened`      | When `true`, the twisty state will be opened by default.                                                      | `boolean` | `undefined` |
+| `target`     | `target`      | The target of the link when the href attribute is used. One of _blank, _self, _top, _parent; default is _self | `string`  | `"_self"`   |
+| `textColor`  | `text-color`  | Color to for the twisty content text                                                                          | `string`  | `undefined` |
 
 
 ## Methods

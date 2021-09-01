@@ -36,6 +36,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Color to for the twisty header text
+         */
+        "labelColor": string;
+        /**
           * Open (expand) the twisty.
          */
         "open": () => Promise<void>;
@@ -47,6 +51,10 @@ export namespace Components {
           * The target of the link when the href attribute is used. One of _blank, _self, _top, _parent; default is _self
          */
         "target": string;
+        /**
+          * Color to for the twisty content text
+         */
+        "textColor": string;
     }
     interface MyComponent {
         /**
@@ -126,6 +134,10 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * Color to for the twisty header text
+         */
+        "labelColor"?: string;
+        /**
           * When `true`, the twisty state will be opened by default.
          */
         "opened"?: boolean;
@@ -133,6 +145,10 @@ declare namespace LocalJSX {
           * The target of the link when the href attribute is used. One of _blank, _self, _top, _parent; default is _self
          */
         "target"?: string;
+        /**
+          * Color to for the twisty content text
+         */
+        "textColor"?: string;
     }
     interface MyComponent {
         /**
